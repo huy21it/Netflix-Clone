@@ -1,6 +1,5 @@
-
-import Head from "next/head";
-import Image from "next/image";
+import Head from 'next/head';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -9,9 +8,7 @@ export default function Home() {
         <title>Home - Netflix</title>
         <link rel="icon" href="/favion.ico" />
       </Head>
-      <main>
-  
-      </main>
+      <main></main>
     </div>
   );
 }
