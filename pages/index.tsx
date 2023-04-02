@@ -8,7 +8,9 @@ export default function Home() {
         <title>Home - Netflix</title>
         <link rel="icon" href="/favion.ico" />
       </Head>
-      <main></main>
+      <main>
+        <div>Netflix-Clone</div>
+      </main>
     </div>
   );
 }
