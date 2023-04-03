@@ -1,16 +1,30 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import Navbar from '@/components/Navbar';
+import useCurrentUser from '@/hooks/useCurrentUser';
+import { NextPageContext } from 'next';
+import { getSession } from 'next-auth/react';
+
+export async function getServerSideProps(context: NextPageContext) {
+  const session = await getSession(context);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: 'auth',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+}
 
 export default function Home() {
+  
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-      <Head>
-        <title>Home - Netflix</title>
-        <link rel="icon" href="/favion.ico" />
-      </Head>
-      <main>
-        <div>Netflix-Clone</div>
-      </main>
-    </div>
+    <>
+      <Navbar/>
+    </>
   );
 }
